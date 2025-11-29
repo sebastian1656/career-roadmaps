@@ -6,221 +6,240 @@
     <title>CS Career Pathways</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Manrope', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
                     },
                     colors: {
-                        brand: {
-                            black: '#111827',
-                            gray: '#6b7280',
-                            light: '#f3f4f6',
-                            primary: '#2563eb',
-                        }
+                        primary: '#0f172a', // Slate 900
+                        secondary: '#475569', // Slate 600
+                        accent: '#2563eb', // Blue 600
                     },
-                    boxShadow: {
-                        'row': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
-                        'row-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025)',
+                    backgroundImage: {
+                        'dot-pattern': 'radial-gradient(#e2e8f0 1px, transparent 1px)',
                     }
                 }
             }
         }
     </script>
     <style>
-        .catalog-row {
-            transition: all 0.2s ease-in-out;
+        /* Dot Pattern Background */
+        body {
+            background-color: #ffffff;
+            background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
         }
-        .catalog-row:hover {
-            transform: scale-[1.01];
-            z-index: 10;
+
+        /* Card Hover Lift */
+        .tech-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .tech-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
-<body class="bg-white text-brand-black font-sans antialiased selection:bg-brand-black selection:text-white">
+<body class="text-primary font-sans antialiased selection:bg-black selection:text-white">
 
     <!-- Navigation -->
-    <nav class="border-b border-gray-100 bg-white sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="fixed w-full z-50 top-0 bg-white/90 backdrop-blur-sm border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-brand-black text-white rounded-lg flex items-center justify-center font-bold text-lg">C</div>
-                    <span class="font-bold text-lg tracking-tight">Course<span class="text-brand-primary">Catalog</span></span>
+                    <span class="w-6 h-6 bg-black rounded flex items-center justify-center text-white text-xs">
+                        <i class="fa-solid fa-code-branch"></i>
+                    </span>
+                    <span class="font-bold text-lg tracking-tight font-display">Talent<span class="text-accent">Voyage</span></span>
                 </div>
-                <div class="flex gap-4 text-sm font-semibold text-brand-gray">
-                    <a href="#" class="hover:text-brand-black transition-colors">Curriculum</a>
-                    <a href="#" class="hover:text-brand-black transition-colors">Pricing</a>
-                    <a href="#" class="px-4 py-2 bg-brand-light text-brand-black rounded-lg hover:bg-gray-200 transition-colors">
-                        Student Portal
-                    </a>
-                </div>
+                
+                
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <main class="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+    <main class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         
-        <!-- Header -->
-        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-            <div>
-                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
-                    Engineering Tracks
-                </h1>
-                <p class="text-lg text-brand-gray max-w-xl">
-                    Select a specialized career path. All roadmaps include certification prep, projects, and interview guides.
-                </p>
+        <!-- Hero Section -->
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <div class="inline-block mb-4 px-3 py-1 bg-slate-100 rounded-full border border-slate-200">
+                <span class="text-xs font-mono font-medium text-slate-600">
+                    <span class="text-green-500 mr-1">●</span> Skillpath
+                </span>
             </div>
-            <div class="flex items-center gap-2 text-sm font-medium bg-brand-light px-3 py-1.5 rounded-full text-brand-gray">
-                <span class="w-2 h-2 rounded-full bg-green-500"></span>
-                Enrollment Open for 2025
+            
+            <h1 class="text-5xl md:text-7xl font-bold font-display tracking-tight mb-6 text-slate-900">
+                Structure your <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">CS learning journey.</span>
+            </h1>
+            
+            <p class="text-xl text-secondary leading-relaxed mb-8 font-light">
+                CS roadmaps tailored for the modern industry. <br class="hidden md:inline">
+                Select a domain to view the complete curriculum.
+            </p>
+
+            <div class="flex justify-center gap-4">
+                <a href="#paths" class="px-6 py-3 bg-white border border-slate-300 rounded-lg shadow-sm hover:border-black transition-colors text-sm font-semibold flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-down"></i> Browse Paths
+                </a>
             </div>
         </div>
 
-        <!-- Catalog List Container -->
-        <div class="flex flex-col gap-4">
-
-            <!-- Full Stack Row -->
-            <a href="fullstack_roadmap.html" class="catalog-row group block bg-white border border-gray-200 rounded-xl p-6 shadow-row hover:shadow-row-hover hover:border-brand-primary/30 relative overflow-hidden">
-                <div class="absolute left-0 top-0 bottom-0 w-1 bg-orange-500 group-hover:w-2 transition-all"></div>
-                
-                <div class="flex flex-col md:flex-row items-center gap-6">
-                    <!-- Icon -->
-                    <div class="flex-shrink-0 w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center text-2xl text-orange-600">
-                        <i class="fa-solid fa-laptop-code"></i>
+        <!-- Cards Grid -->
+        <div id="paths" class="grid md:grid-cols-2 gap-6">
+            
+            <!-- Full Stack Card -->
+            <a href="fullstack_roadmap.html" class="tech-card group bg-white border border-slate-200 rounded-xl overflow-hidden flex flex-col h-full relative">
+                <div class="h-2 w-full bg-orange-500"></div> <!-- Top Accent -->
+                <div class="p-8 flex-1">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-orange-50 rounded-lg text-orange-600 text-xl border border-orange-100">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <span class="text-xs font-mono text-slate-400 bg-slate-50 px-2 py-1 rounded border border-slate-100">WEB</span>
                     </div>
-
-                    <!-- Content -->
-                    <div class="flex-grow text-center md:text-left">
-                        <div class="flex items-center justify-center md:justify-start gap-3 mb-1">
-                            <h3 class="text-xl font-bold">Full Stack Developer</h3>
-                            <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-green-100 text-green-700">Available</span>
-                        </div>
-                        <p class="text-sm text-brand-gray">React, Node.js, SQL, and System Design.</p>
-                        
-                        <!-- Meta Tags Mobile -->
-                        <div class="mt-3 flex flex-wrap justify-center md:justify-start gap-2 md:hidden">
-                            <span class="text-xs bg-gray-50 px-2 py-1 rounded text-gray-500">24 Weeks</span>
-                            <span class="text-xs bg-gray-50 px-2 py-1 rounded text-gray-500">Beginner Friendly</span>
-                        </div>
+                    
+                    <h3 class="text-2xl font-bold font-display mb-3 group-hover:text-orange-600 transition-colors">Full Stack Developer</h3>
+                    <p class="text-secondary mb-6 leading-relaxed">
+                        Build end-to-end applications. Covers React, Node.js, Databases, and API architecture.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-mono rounded">JavaScript</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-mono rounded">React</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-mono rounded">SQL</span>
                     </div>
-
-                    <!-- Meta Info Desktop -->
-                    <div class="hidden md:flex items-center gap-8 text-sm text-brand-gray flex-shrink-0 border-l border-gray-100 pl-8">
-                        <div class="text-center">
-                            <div class="font-bold text-brand-black">24</div>
-                            <div class="text-xs uppercase tracking-wide">Weeks</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="font-bold text-brand-black">4</div>
-                            <div class="text-xs uppercase tracking-wide">Modules</div>
-                        </div>
-                        <div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-brand-black group-hover:text-white transition-colors">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </div>
-                    </div>
+                </div>
+                <div class="px-8 py-4 border-t border-slate-100 bg-slate-50 flex items-center justify-between">
+                    <span class="text-xs font-medium text-slate-500">6 Roles  • 7 Certificates</span>
+                    <i class="fa-solid fa-arrow-right text-slate-400 group-hover:text-orange-600 transition-colors"></i>
                 </div>
             </a>
 
-            <!-- Cloud Row -->
-            <a href="cloud_roadmap.html" class="catalog-row group block bg-white border border-gray-200 rounded-xl p-6 shadow-row hover:shadow-row-hover hover:border-brand-primary/30 relative overflow-hidden">
-                <div class="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 group-hover:w-2 transition-all"></div>
-                
-                <div class="flex flex-col md:flex-row items-center gap-6">
-                    <!-- Icon -->
-                    <div class="flex-shrink-0 w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-2xl text-blue-600">
-                        <i class="fa-solid fa-cloud"></i>
+            <!-- Cloud Card -->
+            <a href="cloud_roadmap.html" class="tech-card group bg-white border border-slate-200 rounded-xl overflow-hidden flex flex-col h-full relative">
+                <div class="h-2 w-full bg-blue-500"></div> <!-- Top Accent -->
+                <div class="p-8 flex-1">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-blue-50 rounded-lg text-blue-600 text-xl border border-blue-100">
+                            <i class="fa-solid fa-cloud"></i>
+                        </div>
+                        <span class="text-xs font-mono text-slate-400 bg-slate-50 px-2 py-1 rounded border border-slate-100">OPS</span>
                     </div>
-
-                    <!-- Content -->
-                    <div class="flex-grow text-center md:text-left">
-                        <div class="flex items-center justify-center md:justify-start gap-3 mb-1">
-                            <h3 class="text-xl font-bold">Cloud Engineer</h3>
-                            <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-green-100 text-green-700">Available</span>
-                        </div>
-                        <p class="text-sm text-brand-gray">AWS, Kubernetes, Terraform, and DevOps CI/CD.</p>
-                         
-                         <!-- Meta Tags Mobile -->
-                         <div class="mt-3 flex flex-wrap justify-center md:justify-start gap-2 md:hidden">
-                            <span class="text-xs bg-gray-50 px-2 py-1 rounded text-gray-500">28 Weeks</span>
-                            <span class="text-xs bg-gray-50 px-2 py-1 rounded text-gray-500">Intermediate</span>
-                        </div>
+                    
+                    <h3 class="text-2xl font-bold font-display mb-3 group-hover:text-blue-600 transition-colors">Cloud Engineer</h3>
+                    <p class="text-secondary mb-6 leading-relaxed">
+                        Master infrastructure. Covers AWS services, Kubernetes orchestration, and Terraform.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-mono rounded">AWS</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-mono rounded">Docker</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-mono rounded">CI/CD</span>
                     </div>
-
-                    <!-- Meta Info Desktop -->
-                    <div class="hidden md:flex items-center gap-8 text-sm text-brand-gray flex-shrink-0 border-l border-gray-100 pl-8">
-                        <div class="text-center">
-                            <div class="font-bold text-brand-black">28</div>
-                            <div class="text-xs uppercase tracking-wide">Weeks</div>
+                </div>
+                <div class="px-8 py-4 border-t border-slate-100 bg-slate-50 flex items-center justify-between">
+                    <span class="text-xs font-medium text-slate-500">5 Roles  • 8 Certificates</span>
+                    <i class="fa-solid fa-arrow-right text-slate-400 group-hover:text-blue-600 transition-colors"></i>
+                </div>
+            </a>
+			
+			<!-- --------------- -->
+			 <a href="cloud_roadmap.html" class="tech-card group bg-white border border-slate-200 rounded-xl overflow-hidden flex flex-col h-full relative">
+                <div class="h-2 w-full bg-blue-500"></div> <!-- Top Accent -->
+                <div class="p-8 flex-1">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-blue-50 rounded-lg text-blue-600 text-xl border border-blue-100">
+                            <i class="fa-solid fa-cloud"></i>
                         </div>
-                        <div class="text-center">
-                            <div class="font-bold text-brand-black">5</div>
-                            <div class="text-xs uppercase tracking-wide">Modules</div>
-                        </div>
-                        <div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-brand-black group-hover:text-white transition-colors">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </div>
+                        <span class="text-xs font-mono text-slate-400 bg-slate-50 px-2 py-1 rounded border border-slate-100">OPS</span>
                     </div>
+                    
+                    <h3 class="text-2xl font-bold font-display mb-3 group-hover:text-blue-600 transition-colors">AI Engineer</h3>
+                    <p class="text-secondary mb-6 leading-relaxed">
+                        Master infrastructure. Covers AWS services, Kubernetes orchestration, and Terraform.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-mono rounded">AWS</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-mono rounded">Docker</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-mono rounded">CI/CD</span>
+                    </div>
+                </div>
+                <div class="px-8 py-4 border-t border-slate-100 bg-slate-50 flex items-center justify-between">
+                    <span class="text-xs font-medium text-slate-500">5 Roles  • 8 Certificates</span>
+                    <i class="fa-solid fa-arrow-right text-slate-400 group-hover:text-blue-600 transition-colors"></i>
+                </div>
+            </a>
+			
+			
+			 <a href="cloud_roadmap.html" class="tech-card group bg-white border border-slate-200 rounded-xl overflow-hidden flex flex-col h-full relative">
+                <div class="h-2 w-full bg-blue-500"></div> <!-- Top Accent -->
+                <div class="p-8 flex-1">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-blue-50 rounded-lg text-blue-600 text-xl border border-blue-100">
+                            <i class="fa-solid fa-cloud"></i>
+                        </div>
+                        <span class="text-xs font-mono text-slate-400 bg-slate-50 px-2 py-1 rounded border border-slate-100">OPS</span>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold font-display mb-3 group-hover:text-blue-600 transition-colors">Cyber Secuity Analys</h3>
+                    <p class="text-secondary mb-6 leading-relaxed">
+                        Master infrastructure. Covers AWS services, Kubernetes orchestration, and Terraform.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-mono rounded">AWS</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-mono rounded">Docker</span>
+                        <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-mono rounded">CI/CD</span>
+                    </div>
+                </div>
+                <div class="px-8 py-4 border-t border-slate-100 bg-slate-50 flex items-center justify-between">
+                    <span class="text-xs font-medium text-slate-500">5 Roles  • 8 Certificates</span>
+                    <i class="fa-solid fa-arrow-right text-slate-400 group-hover:text-blue-600 transition-colors"></i>
                 </div>
             </a>
 
-            <!-- Data Science Row (Locked) -->
-            <div class="catalog-row group block bg-gray-50 border border-gray-200 rounded-xl p-6 relative overflow-hidden opacity-75 cursor-not-allowed">
-                <div class="absolute left-0 top-0 bottom-0 w-1 bg-gray-300"></div>
-                
-                <div class="flex flex-col md:flex-row items-center gap-6">
-                    <!-- Icon -->
-                    <div class="flex-shrink-0 w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-2xl text-gray-400 grayscale">
-                        <i class="fa-solid fa-brain"></i>
-                    </div>
-
-                    <!-- Content -->
-                    <div class="flex-grow text-center md:text-left">
-                        <div class="flex items-center justify-center md:justify-start gap-3 mb-1">
-                            <h3 class="text-xl font-bold text-gray-500">Data Scientist</h3>
-                            <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-gray-200 text-gray-500">Q3 2025</span>
+            <!-- Data Science (Coming Soon) -->
+            <div class="tech-card group bg-slate-50 border border-slate-200 rounded-xl overflow-hidden flex flex-col h-full relative opacity-75 cursor-not-allowed">
+                <div class="h-2 w-full bg-slate-300"></div>
+                <div class="p-8 flex-1">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-white rounded-lg text-slate-400 text-xl border border-slate-200">
+                            <i class="fa-solid fa-brain"></i>
                         </div>
-                        <p class="text-sm text-gray-400">Python, Machine Learning, AI Models.</p>
+                        <span class="text-xs font-bold text-slate-400 bg-slate-200 px-2 py-1 rounded">SOON</span>
                     </div>
-
-                    <!-- Meta Info Desktop -->
-                    <div class="hidden md:flex items-center gap-8 text-sm text-brand-gray flex-shrink-0 border-l border-gray-200 pl-8">
-                         <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-gray-200 text-xs font-semibold">
-                            <i class="fa-regular fa-bell"></i> Notify Me
-                        </div>
-                    </div>
+                    
+                    <h3 class="text-2xl font-bold font-display mb-3 text-slate-500">Data Scientist</h3>
+                    <p class="text-slate-400 mb-6">
+                        Unlock insights from data. Machine Learning, Python, and AI models.
+                    </p>
                 </div>
             </div>
 
-            <!-- Security Row (Locked) -->
-            <div class="catalog-row group block bg-gray-50 border border-gray-200 rounded-xl p-6 relative overflow-hidden opacity-75 cursor-not-allowed">
-                <div class="absolute left-0 top-0 bottom-0 w-1 bg-gray-300"></div>
-                
-                <div class="flex flex-col md:flex-row items-center gap-6">
-                    <!-- Icon -->
-                    <div class="flex-shrink-0 w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-2xl text-gray-400 grayscale">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-
-                    <!-- Content -->
-                    <div class="flex-grow text-center md:text-left">
-                        <div class="flex items-center justify-center md:justify-start gap-3 mb-1">
-                            <h3 class="text-xl font-bold text-gray-500">Cyber Security</h3>
-                            <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-gray-200 text-gray-500">Q4 2025</span>
+            <!-- Security (Coming Soon) -->
+            <div class="tech-card group bg-slate-50 border border-slate-200 rounded-xl overflow-hidden flex flex-col h-full relative opacity-75 cursor-not-allowed">
+                <div class="h-2 w-full bg-slate-300"></div>
+                <div class="p-8 flex-1">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-white rounded-lg text-slate-400 text-xl border border-slate-200">
+                            <i class="fa-solid fa-shield-halved"></i>
                         </div>
-                        <p class="text-sm text-gray-400">Ethical Hacking, Network Defense, SecOps.</p>
+                        <span class="text-xs font-bold text-slate-400 bg-slate-200 px-2 py-1 rounded">SOON</span>
                     </div>
-
-                     <!-- Meta Info Desktop -->
-                     <div class="hidden md:flex items-center gap-8 text-sm text-brand-gray flex-shrink-0 border-l border-gray-200 pl-8">
-                        <div class="flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-gray-200 text-xs font-semibold">
-                           <i class="fa-regular fa-bell"></i> Notify Me
-                       </div>
-                   </div>
+                    
+                    <h3 class="text-2xl font-bold font-display mb-3 text-slate-500">Cyber Security</h3>
+                    <p class="text-slate-400 mb-6">
+                        Network defense, ethical hacking, and security protocols.
+                    </p>
                 </div>
             </div>
 
@@ -228,10 +247,18 @@
 
     </main>
 
-    <!-- Simple Footer -->
-    <footer class="border-t border-gray-100 py-12 bg-white">
-        <div class="max-w-5xl mx-auto px-4 text-center">
-            <p class="text-sm text-gray-400">&copy; 2025 CourseCatalog. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-12 mt-12">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center gap-2 mb-4 md:mb-0">
+                <span class="font-bold text-sm tracking-tight font-display">DevMap.io</span>
+                <span class="text-slate-400 text-sm">&copy; 2025</span>
+            </div>
+            <div class="flex gap-6 text-slate-400">
+                <a href="#" class="hover:text-black transition-colors"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="hover:text-blue-400 transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="hover:text-pink-600 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+            </div>
         </div>
     </footer>
 
