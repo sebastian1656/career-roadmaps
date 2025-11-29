@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-pt-24">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Engineer Career Path</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['Roboto Mono', 'monospace'],
+                    },
+                    colors: {
+                        cloud: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9', // Sky blue
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
+                        },
+                        brand: {
+                            aws: '#FF9900',
+                            k8s: '#326CE5',
+                            linux: '#FCC624',
+                            terraform: '#7B42BC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth scrolling behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom file input hover state */
+        .file-upload-wrapper:hover .upload-icon {
+            transform: translateY(-2px);
+        }
+
+        /* Focus ring for accessibility */
+        *:focus-visible {
+            outline: 2px solid #0ea5e9;
+            outline-offset: 2px;
+        }
+
+        /* Module card left border transition */
+        .module-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .module-card:hover {
+            border-left-color: #0ea5e9;
+            transform: translateX(4px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700 font-sans antialiased selection:bg-cloud-100 selection:text-cloud-900">
+
+    <!-- Top Navigation Bar -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-gradient-to-br from-cloud-500 to-cloud-700 rounded-lg flex items-center justify-center text-white">
+                        <i class="fa-solid fa-cloud"></i>
+                    </div>
+                    <span class="font-bold text-xl text-slate-800 tracking-tight">Cloud<span class="text-cloud-600">Ops</span> Path</span>
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Layout -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+            
+            <!-- Sidebar Navigation (Sticky) -->
+            <aside class="hidden lg:block lg:col-span-3">
+                <nav class="sticky top-24 space-y-1" aria-label="Sidebar">
+                    <div class="pb-4">
+                        <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Flight Plan</h3>
+                        <div class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden">
+                            <a href="#intro" class="group flex items-center px-3 py-2 text-sm font-medium text-slate-900 bg-cloud-50 border-l-4 border-cloud-500">
+                                <i class="fa-solid fa-flag mr-3 text-cloud-500"></i>
+                                Start Here
+                            </a>
+                            <a href="#phase1" class="group flex items-center px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-4 border-transparent hover:border-slate-300 transition-colors">
+                                <span class="w-6 text-center mr-1 text-slate-400 text-xs">01</span>
+                                OS & Networking
+                            </a>
+                            <a href="#phase2" class="group flex items-center px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-4 border-transparent hover:border-slate-300 transition-colors">
+                                <span class="w-6 text-center mr-1 text-slate-400 text-xs">02</span>
+                                Cloud Core (AWS)
+                            </a>
+                            <a href="#phase3" class="group flex items-center px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-4 border-transparent hover:border-slate-300 transition-colors">
+                                <span class="w-6 text-center mr-1 text-slate-400 text-xs">03</span>
+                                IaC & Automation
+                            </a>
+                            <a href="#phase4" class="group flex items-center px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 border-l-4 border-transparent hover:border-slate-300 transition-colors">
+                                <span class="w-6 text-center mr-1 text-slate-400 text-xs">04</span>
+                                Containers & K8s
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="p-4 bg-slate-100 rounded-lg border border-slate-200">
+                        <p class="text-xs text-slate-500 mb-2">Progress</p>
+                        <div class="w-full bg-slate-200 rounded-full h-2 mb-2">
+                            <div class="bg-cloud-500 h-2 rounded-full" style="width: 0%"></div>
+                        </div>
+                        <p class="text-xs text-slate-400">0% Completed</p>
+                    </div>
+                </nav>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="lg:col-span-9 space-y-8">
+                
+                <!-- Header Section -->
+                <div id="intro" class="bg-white rounded-xl p-8 border border-slate-200 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10">
+                        <i class="fa-solid fa-cloud-arrow-up text-9xl text-slate-900"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <span class="inline-flex items-center rounded-full bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10 mb-4">
+                            2025 Roadmap
+                        </span>
+                        <h1 class="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">Cloud Engineer Architect</h1>
+                        <p class="text-lg text-slate-600 max-w-2xl">
+                            Master the infrastructure that powers the modern internet. This curriculum covers Linux, AWS, Terraform, and Kubernetes to take you from zero to Cloud Architect.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Phase 1: Fundamentals -->
+                <section id="phase1" class="module-card bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                    <div class="p-6 sm:p-8">
+                        <div class="flex items-start justify-between mb-6">
+                            <div>
+                                <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                                    <span class="flex items-center justify-center w-8 h-8 rounded bg-slate-100 text-slate-500 text-sm font-mono">01</span>
+                                    OS & Networking Essentials
+                                </h2>
+                                <p class="mt-1 text-sm text-slate-500 ml-10">The bedrock of all infrastructure.</p>
+                            </div>
+                            <div class="hidden sm:flex gap-2 text-2xl">
+                                <i class="fa-brands fa-linux text-brand-linux" title="Linux"></i>
+                                <i class="fa-solid fa-terminal text-slate-700" title="Bash"></i>
+                            </div>
+                        </div>
+
+                        <div class="ml-0 sm:ml-10 grid gap-6 md:grid-cols-2 mb-8">
+                            <div class="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                <h3 class="font-semibold text-slate-800 mb-2 text-sm"><i class="fa-brands fa-linux mr-2"></i>Linux Administration</h3>
+                                <ul class="text-sm text-slate-600 space-y-1 list-disc list-inside">
+                                    <li>File System Hierarchy</li>
+                                    <li>Permissions (chmod, chown)</li>
+                                    <li>Package Management (apt, yum)</li>
+                                    <li>Bash Scripting Basics</li>
+                                </ul>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded-lg border border-slate-100">
+                                <h3 class="font-semibold text-slate-800 mb-2 text-sm"><i class="fa-solid fa-network-wired mr-2"></i>Networking</h3>
+                                <ul class="text-sm text-slate-600 space-y-1 list-disc list-inside">
+                                    <li>OSI Model & TCP/IP</li>
+                                    <li>DNS, HTTP/HTTPS, SSL</li>
+                                    <li>Subnetting & CIDR</li>
+                                    <li>Firewalls & Ports</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Action Bar -->
+                        <div class="ml-0 sm:ml-10 pt-6 border-t border-slate-100 flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
+                            <div class="flex gap-2">
+                                <a href="https://www.coursera.org/learn/linux-fundamentals" target="_blank" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-white border border-slate-200 text-slate-600 text-xs font-medium hover:bg-slate-50 hover:text-cloud-600 transition-colors">
+                                    <i class="fa-solid fa-graduation-cap"></i> Coursera: Linux
+                                </a>
+                                <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/training/digital-skills.html" target="_blank" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-white border border-slate-200 text-slate-600 text-xs font-medium hover:bg-slate-50 hover:text-cloud-600 transition-colors">
+                                    <i class="fa-solid fa-server"></i> Cisco: Networking
+                                </a>
+                            </div>
+                            
+                            <div class="w-full sm:w-auto">
+                                <label class="file-upload-wrapper cursor-pointer flex items-center justify-center sm:justify-start gap-2 bg-slate-800 text-white px-4 py-2 rounded-md text-xs font-medium hover:bg-slate-700 transition-colors">
+                                    <i class="fa-solid fa-upload upload-icon transition-transform"></i>
+                                    <span>Upload Certificate</span>
+                                    <input type="file" class="hidden" onchange="const name = this.files[0]?.name; if(name) { this.parentElement.querySelector('span').textContent = name.length > 15 ? name.substring(0,12)+'...' : name; this.parentElement.classList.add('bg-green-600', 'hover:bg-green-700'); this.parentElement.classList.remove('bg-slate-800', 'hover:bg-slate-700'); }">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Phase 2: Cloud Core -->
+                <section id="phase2" class="module-card bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                    <div class="p-6 sm:p-8">
+                        <div class="flex items-start justify-between mb-6">
+                            <div>
+                                <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                                    <span class="flex items-center justify-center w-8 h-8 rounded bg-slate-100 text-slate-500 text-sm font-mono">02</span>
+                                    Cloud Core (AWS)
+                                </h2>
+                                <p class="mt-1 text-sm text-slate-500 ml-10">Understanding the public cloud infrastructure.</p>
+                            </div>
+                            <div class="hidden sm:flex gap-2 text-2xl">
+                                <i class="fa-brands fa-aws text-brand-aws" title="AWS"></i>
+                            </div>
+                        </div>
+
+                        <div class="ml-0 sm:ml-10 space-y-4 mb-8">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="p-3 rounded border border-slate-100 bg-orange-50/50">
+                                    <h4 class="font-bold text-slate-800 text-xs uppercase mb-1">Compute</h4>
+                                    <p class="text-sm text-slate-600">EC2, Lambda, Auto Scaling Groups, Load Balancers.</p>
+                                </div>
+                                <div class="p-3 rounded border border-slate-100 bg-orange-50/50">
+                                    <h4 class="font-bold text-slate-800 text-xs uppercase mb-1">Network</h4>
+                                    <p class="text-sm text-slate-600">VPC, Subnets, Route Tables, NAT Gateways.</p>
+                                </div>
+                                <div class="p-3 rounded border border-slate-100 bg-orange-50/50">
+                                    <h4 class="font-bold text-slate-800 text-xs uppercase mb-1">Security</h4>
+                                    <p class="text-sm text-slate-600">IAM Roles, Policies, Security Groups, NACLs.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Bar -->
+                        <div class="ml-0 sm:ml-10 pt-6 border-t border-slate-100 flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
+                            <div class="flex gap-2">
+                                <a href="https://www.coursera.org/learn/aws-fundamentals-going-cloud-native" target="_blank" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-white border border-slate-200 text-slate-600 text-xs font-medium hover:bg-slate-50 hover:text-cloud-600 transition-colors">
+                                    <i class="fa-brands fa-aws"></i> Coursera: AWS
+                                </a>
+                                <a href="https://digital-learning.cisco.com/" target="_blank" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-white border border-slate-200 text-slate-600 text-xs font-medium hover:bg-slate-50 hover:text-cloud-600 transition-colors">
+                                    <i class="fa-solid fa-cloud"></i> Cisco: Cloud
+                                </a>
+                            </div>
+                            
+                            <div class="w-full sm:w-auto">
+                                <label class="file-upload-wrapper cursor-pointer flex items-center justify-center sm:justify-start gap-2 bg-slate-800 text-white px-4 py-2 rounded-md text-xs font-medium hover:bg-slate-700 transition-colors">
+                                    <i class="fa-solid fa-upload upload-icon transition-transform"></i>
+                                    <span>Upload Certificate</span>
+                                    <input type="file" class="hidden" onchange="const name = this.files[0]?.name; if(name) { this.parentElement.querySelector('span').textContent = name.length > 15 ? name.substring(0,12)+'...' : name; this.parentElement.classList.add('bg-green-600', 'hover:bg-green-700'); this.parentElement.classList.remove('bg-slate-800', 'hover:bg-slate-700'); }">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Phase 3: IaC -->
+                <section id="phase3" class="module-card bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                    <div class="p-6 sm:p-8">
+                        <div class="flex items-start justify-between mb-6">
+                            <div>
+                                <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                                    <span class="flex items-center justify-center w-8 h-8 rounded bg-slate-100 text-slate-500 text-sm font-mono">03</span>
+                                    Infrastructure as Code
+                                </h2>
+                                <p class="mt-1 text-sm text-slate-500 ml-10">Automating infrastructure provisioning.</p>
+                            </div>
+                            <div class="hidden sm:flex gap-2 text-2xl">
+                                <i class="fa-solid fa-code-branch text-brand-terraform" title="Terraform"></i>
+                            </div>
+                        </div>
+
+                        <div class="ml-0 sm:ml-10 mb-8">
+                            <div class="bg-slate-900 rounded-lg p-4 font-mono text-xs text-slate-300 mb-4 overflow-x-auto">
+                                <span class="text-purple-400">resource</span> <span class="text-green-400">"aws_instance"</span> <span class="text-yellow-400">"web"</span> {<br>
+                                &nbsp;&nbsp;ami           = "ami-12345678"<br>
+                                &nbsp;&nbsp;instance_type = "t2.micro"<br>
+                                }
+                            </div>
+                            <div class="flex gap-4 flex-wrap">
+                                <span class="inline-flex items-center rounded-md bg-purple-50 px-2 py-1 text-xs font-medium text-purple-700 ring-1 ring-inset ring-purple-700/10">Terraform</span>
+                                <span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">Ansible</span>
+                                <span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">Python Boto3</span>
+                            </div>
+                        </div>
+
+                         <!-- Action Bar -->
+                         <div class="ml-0 sm:ml-10 pt-6 border-t border-slate-100 flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
+                            <div class="flex gap-2">
+                                <a href="https://www.coursera.org/learn/infrastructure-as-code-terraform" target="_blank" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-white border border-slate-200 text-slate-600 text-xs font-medium hover:bg-slate-50 hover:text-cloud-600 transition-colors">
+                                    <i class="fa-solid fa-code"></i> Coursera: Terraform
+                                </a>
+                                <a href="https://developer.cisco.com/certification/devnet-associate/" target="_blank" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-white border border-slate-200 text-slate-600 text-xs font-medium hover:bg-slate-50 hover:text-cloud-600 transition-colors">
+                                    <i class="fa-solid fa-network-wired"></i> Cisco: DevNet
+                                </a>
+                            </div>
+                            
+                            <div class="w-full sm:w-auto">
+                                <label class="file-upload-wrapper cursor-pointer flex items-center justify-center sm:justify-start gap-2 bg-slate-800 text-white px-4 py-2 rounded-md text-xs font-medium hover:bg-slate-700 transition-colors">
+                                    <i class="fa-solid fa-upload upload-icon transition-transform"></i>
+                                    <span>Upload Certificate</span>
+                                    <input type="file" class="hidden" onchange="const name = this.files[0]?.name; if(name) { this.parentElement.querySelector('span').textContent = name.length > 15 ? name.substring(0,12)+'...' : name; this.parentElement.classList.add('bg-green-600', 'hover:bg-green-700'); this.parentElement.classList.remove('bg-slate-800', 'hover:bg-slate-700'); }">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Phase 4: K8s -->
+                <section id="phase4" class="module-card bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                    <div class="p-6 sm:p-8">
+                        <div class="flex items-start justify-between mb-6">
+                            <div>
+                                <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                                    <span class="flex items-center justify-center w-8 h-8 rounded bg-slate-100 text-slate-500 text-sm font-mono">04</span>
+                                    Containers & Orchestration
+                                </h2>
+                                <p class="mt-1 text-sm text-slate-500 ml-10">Scaling applications with Docker and Kubernetes.</p>
+                            </div>
+                            <div class="hidden sm:flex gap-2 text-2xl">
+                                <i class="fa-brands fa-docker text-blue-500" title="Docker"></i>
+                                <i class="fa-solid fa-dharmachakra text-brand-k8s" title="Kubernetes"></i>
+                            </div>
+                        </div>
+
+                        <div class="ml-0 sm:ml-10 grid md:grid-cols-2 gap-6 mb-8">
+                            <div class="relative group cursor-pointer">
+                                <div class="absolute inset-0 bg-blue-500 rounded-lg opacity-0 group-hover:opacity-5 transition-opacity"></div>
+                                <div class="p-4 border border-slate-200 rounded-lg">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <i class="fa-brands fa-docker text-2xl text-blue-500"></i>
+                                        <h4 class="font-bold text-slate-800">Docker</h4>
+                                    </div>
+                                    <p class="text-xs text-slate-500">Images, Containers, Dockerfile, Docker Compose.</p>
+                                </div>
+                            </div>
+                            <div class="relative group cursor-pointer">
+                                <div class="absolute inset-0 bg-blue-500 rounded-lg opacity-0 group-hover:opacity-5 transition-opacity"></div>
+                                <div class="p-4 border border-slate-200 rounded-lg">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <i class="fa-solid fa-dharmachakra text-2xl text-brand-k8s"></i>
+                                        <h4 class="font-bold text-slate-800">Kubernetes</h4>
+                                    </div>
+                                    <p class="text-xs text-slate-500">Pods, Deployments, Services, Ingress, Helm Charts.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                         <!-- Action Bar -->
+                         <div class="ml-0 sm:ml-10 pt-6 border-t border-slate-100 flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
+                            <div class="flex gap-2">
+                                <a href="https://www.coursera.org/specializations/cloud-computing" target="_blank" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-white border border-slate-200 text-slate-600 text-xs font-medium hover:bg-slate-50 hover:text-cloud-600 transition-colors">
+                                    <i class="fa-solid fa-cubes"></i> Coursera: K8s
+                                </a>
+                                <a href="https://www.cisco.com/c/en/us/solutions/cloud/index.html" target="_blank" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-white border border-slate-200 text-slate-600 text-xs font-medium hover:bg-slate-50 hover:text-cloud-600 transition-colors">
+                                    <i class="fa-solid fa-network-wired"></i> Cisco: Cloud
+                                </a>
+                            </div>
+                            
+                            <div class="w-full sm:w-auto">
+                                <label class="file-upload-wrapper cursor-pointer flex items-center justify-center sm:justify-start gap-2 bg-slate-800 text-white px-4 py-2 rounded-md text-xs font-medium hover:bg-slate-700 transition-colors">
+                                    <i class="fa-solid fa-upload upload-icon transition-transform"></i>
+                                    <span>Upload Certificate</span>
+                                    <input type="file" class="hidden" onchange="const name = this.files[0]?.name; if(name) { this.parentElement.querySelector('span').textContent = name.length > 15 ? name.substring(0,12)+'...' : name; this.parentElement.classList.add('bg-green-600', 'hover:bg-green-700'); this.parentElement.classList.remove('bg-slate-800', 'hover:bg-slate-700'); }">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Footer -->
+                <footer class="mt-12 text-center text-sm text-slate-400 pb-8">
+                    <p>Designed for Future Cloud Architects. &copy; 2025.</p>
+                </footer>
+
+            </main>
+        </div>
+    </div>
+
+</body>
+</html>

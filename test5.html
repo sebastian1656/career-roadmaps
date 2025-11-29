@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Engineer Career Path</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#1a1a1a',
+                            gray: '#f5f5f5',
+                            blue: '#2563eb',
+                            accent: '#f59e0b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar for the right panel */
+        .scroll-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        .scroll-container::-webkit-scrollbar-track {
+            background: #ffffff; 
+        }
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: #e5e5e5; 
+            border-radius: 3px;
+        }
+        .scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #d4d4d4; 
+        }
+
+        /* Number Circle Animation */
+        .step-number {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .group:hover .step-number {
+            background-color: #2563eb;
+            color: white;
+            border-color: #2563eb;
+            transform: scale(1.1);
+        }
+
+        /* Card Hover */
+        .phase-card {
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .phase-card:hover {
+            border-color: #2563eb;
+            transform: translateX(4px);
+        }
+    </style>
+</head>
+<body class="bg-white text-brand-black font-sans antialiased h-screen overflow-hidden flex flex-col lg:flex-row">
+
+    <!-- LEFT PANEL: Fixed/Sticky Info Area -->
+    <aside class="w-full lg:w-5/12 xl:w-4/12 bg-white border-b lg:border-b-0 lg:border-r border-gray-200 p-8 lg:p-12 flex flex-col justify-between relative z-10 lg:h-full">
+        
+        <!-- Header Content -->
+        <div>
+            <div class="flex items-center gap-2 mb-6">
+                <span class="w-3 h-3 rounded-full bg-brand-blue"></span>
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-500">Career Roadmap</span>
+            </div>
+            
+            <h1 class="font-display text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6">
+                Cloud<br>
+                Engineer<br>
+                <span class="text-brand-blue">Architect.</span>
+            </h1>
+
+            <p class="text-gray-600 text-lg leading-relaxed mb-8 max-w-md">
+                A structured curriculum to master the infrastructure of the modern web. From Linux terminals to Kubernetes clusters.
+            </p>
+
+            <div class="flex flex-wrap gap-3 mb-8">
+                <span class="px-3 py-1 rounded-full border border-gray-200 text-xs font-medium text-gray-600 bg-gray-50">AWS</span>
+                <span class="px-3 py-1 rounded-full border border-gray-200 text-xs font-medium text-gray-600 bg-gray-50">Terraform</span>
+                <span class="px-3 py-1 rounded-full border border-gray-200 text-xs font-medium text-gray-600 bg-gray-50">Docker</span>
+                <span class="px-3 py-1 rounded-full border border-gray-200 text-xs font-medium text-gray-600 bg-gray-50">Linux</span>
+            </div>
+        </div>
+
+        <!-- Footer Content of Left Panel -->
+        <div class="hidden lg:block">
+            <div class="p-6 bg-brand-gray rounded-2xl">
+                <h3 class="font-display font-bold text-lg mb-2">Your Progress</h3>
+                <div class="w-full bg-gray-300 rounded-full h-2 mb-2">
+                    <div class="bg-brand-blue h-2 rounded-full w-0 transition-all duration-1000" id="progressBar"></div>
+                </div>
+                <p class="text-xs text-gray-500">Start the first module to begin tracking.</p>
+            </div>
+            
+            <div class="mt-8 text-xs text-gray-400">
+                &copy; 2025 Career Paths Inc.
+            </div>
+        </div>
+    </aside>
+
+    <!-- RIGHT PANEL: Scrollable Content -->
+    <main class="w-full lg:w-7/12 xl:w-8/12 bg-white h-full overflow-y-auto scroll-container p-6 lg:p-16 scroll-smooth">
+        
+        <div class="max-w-3xl mx-auto space-y-16 pb-20">
+
+            <!-- Phase 1 -->
+            <section class="group">
+                <div class="flex items-baseline gap-4 mb-6">
+                    <span class="step-number flex items-center justify-center w-12 h-12 rounded-full border-2 border-gray-200 font-display font-bold text-xl text-gray-400 bg-white z-10">01</span>
+                    <h2 class="font-display text-3xl font-bold">Fundamentals</h2>
+                </div>
+                
+                <div class="phase-card ml-6 pl-10 border-l-2 border-gray-100 pb-2 space-y-6">
+                    <p class="text-gray-600">The bedrock of all infrastructure. Before the cloud, you must understand the machine.</p>
+                    
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="p-5 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow bg-white">
+                            <i class="fa-brands fa-linux text-2xl mb-3 text-yellow-500"></i>
+                            <h3 class="font-bold mb-1">Linux SysAdmin</h3>
+                            <ul class="text-sm text-gray-500 space-y-1">
+                                <li>• File Systems & Permissions</li>
+                                <li>• Bash Scripting</li>
+                                <li>• Systemd & Processes</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow bg-white">
+                            <i class="fa-solid fa-network-wired text-2xl mb-3 text-blue-500"></i>
+                            <h3 class="font-bold mb-1">Networking</h3>
+                            <ul class="text-sm text-gray-500 space-y-1">
+                                <li>• TCP/IP & OSI Model</li>
+                                <li>• DNS & HTTP/S</li>
+                                <li>• Subnetting (CIDR)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="https://www.coursera.org/learn/linux-fundamentals" target="_blank" class="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-brand-gray hover:bg-gray-200 rounded-lg text-sm font-semibold transition-colors">
+                            <i class="fa-solid fa-graduation-cap text-gray-500"></i> Coursera: Linux
+                        </a>
+                        <label class="flex-1 cursor-pointer flex items-center justify-center gap-2 px-4 py-3 border border-gray-200 hover:border-brand-blue rounded-lg text-sm font-medium transition-all group/btn">
+                            <i class="fa-solid fa-upload text-brand-blue group-hover/btn:scale-110 transition-transform"></i>
+                            <span class="truncate">Upload Certificate</span>
+                            <input type="file" class="hidden" onchange="this.previousElementSibling.textContent = this.files[0] ? this.files[0].name : 'Upload Certificate'; this.parentElement.classList.add('bg-blue-50', 'border-brand-blue');">
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Phase 2 -->
+            <section class="group">
+                <div class="flex items-baseline gap-4 mb-6">
+                    <span class="step-number flex items-center justify-center w-12 h-12 rounded-full border-2 border-gray-200 font-display font-bold text-xl text-gray-400 bg-white z-10">02</span>
+                    <h2 class="font-display text-3xl font-bold">AWS Core</h2>
+                </div>
+                
+                <div class="phase-card ml-6 pl-10 border-l-2 border-gray-100 pb-2 space-y-6">
+                    <p class="text-gray-600">Translating infrastructure concepts to the public cloud environment.</p>
+                    
+                    <div class="bg-brand-gray p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-4">
+                            <i class="fa-brands fa-aws text-3xl text-orange-500"></i>
+                            <span class="font-display font-bold text-xl">The "Big Three"</span>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex gap-4 items-start">
+                                <span class="font-mono text-xs font-bold bg-white px-2 py-1 rounded border">EC2</span>
+                                <p class="text-sm text-gray-600">Virtual servers. Learn instance types, AMIs, and security groups.</p>
+                            </div>
+                            <div class="flex gap-4 items-start">
+                                <span class="font-mono text-xs font-bold bg-white px-2 py-1 rounded border">VPC</span>
+                                <p class="text-sm text-gray-600">Virtual Private Cloud. Subnets, Route Tables, Internet Gateways.</p>
+                            </div>
+                            <div class="flex gap-4 items-start">
+                                <span class="font-mono text-xs font-bold bg-white px-2 py-1 rounded border">S3</span>
+                                <p class="text-sm text-gray-600">Object Storage. Buckets, policies, and lifecycle rules.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="https://www.coursera.org/learn/aws-fundamentals-going-cloud-native" target="_blank" class="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-brand-gray hover:bg-gray-200 rounded-lg text-sm font-semibold transition-colors">
+                            <i class="fa-brands fa-aws text-gray-500"></i> Coursera: AWS
+                        </a>
+                        <label class="flex-1 cursor-pointer flex items-center justify-center gap-2 px-4 py-3 border border-gray-200 hover:border-brand-blue rounded-lg text-sm font-medium transition-all group/btn">
+                            <i class="fa-solid fa-upload text-brand-blue group-hover/btn:scale-110 transition-transform"></i>
+                            <span class="truncate">Upload Certificate</span>
+                            <input type="file" class="hidden" onchange="this.previousElementSibling.textContent = this.files[0] ? this.files[0].name : 'Upload Certificate'; this.parentElement.classList.add('bg-blue-50', 'border-brand-blue');">
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Phase 3 -->
+            <section class="group">
+                <div class="flex items-baseline gap-4 mb-6">
+                    <span class="step-number flex items-center justify-center w-12 h-12 rounded-full border-2 border-gray-200 font-display font-bold text-xl text-gray-400 bg-white z-10">03</span>
+                    <h2 class="font-display text-3xl font-bold">Infrastructure as Code</h2>
+                </div>
+                
+                <div class="phase-card ml-6 pl-10 border-l-2 border-gray-100 pb-2 space-y-6">
+                    <p class="text-gray-600">Stop clicking buttons. Start writing code to provision resources.</p>
+                    
+                    <div class="border border-gray-200 rounded-xl overflow-hidden">
+                        <div class="bg-gray-900 px-4 py-2 flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            <span class="text-xs text-gray-500 ml-2 font-mono">main.tf</span>
+                        </div>
+                        <div class="p-4 bg-white font-mono text-sm">
+                            <div class="text-purple-700 font-bold mb-1">resource "aws_s3_bucket" "b" {</div>
+                            <div class="pl-4 text-gray-600">bucket = "my-tf-test-bucket"</div>
+                            <div class="pl-4 text-gray-600">tags = {</div>
+                            <div class="pl-8 text-green-600">Name = "My bucket"</div>
+                            <div class="pl-4 text-gray-600">}</div>
+                            <div class="text-purple-700 font-bold">}</div>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="https://www.coursera.org/learn/infrastructure-as-code-terraform" target="_blank" class="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-brand-gray hover:bg-gray-200 rounded-lg text-sm font-semibold transition-colors">
+                            <i class="fa-solid fa-code text-gray-500"></i> Coursera: Terraform
+                        </a>
+                        <label class="flex-1 cursor-pointer flex items-center justify-center gap-2 px-4 py-3 border border-gray-200 hover:border-brand-blue rounded-lg text-sm font-medium transition-all group/btn">
+                            <i class="fa-solid fa-upload text-brand-blue group-hover/btn:scale-110 transition-transform"></i>
+                            <span class="truncate">Upload Certificate</span>
+                            <input type="file" class="hidden" onchange="this.previousElementSibling.textContent = this.files[0] ? this.files[0].name : 'Upload Certificate'; this.parentElement.classList.add('bg-blue-50', 'border-brand-blue');">
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+             <!-- Phase 4 -->
+             <section class="group">
+                <div class="flex items-baseline gap-4 mb-6">
+                    <span class="step-number flex items-center justify-center w-12 h-12 rounded-full border-2 border-gray-200 font-display font-bold text-xl text-gray-400 bg-white z-10">04</span>
+                    <h2 class="font-display text-3xl font-bold">Kubernetes</h2>
+                </div>
+                
+                <div class="phase-card ml-6 pl-10 border-l-2 border-gray-100 pb-2 space-y-6">
+                    <p class="text-gray-600">Container orchestration at scale. The standard for modern deployment.</p>
+                    
+                    <div class="flex gap-4">
+                        <div class="flex-1 bg-blue-50 border border-blue-100 p-4 rounded-xl text-center">
+                            <i class="fa-brands fa-docker text-3xl text-blue-500 mb-2"></i>
+                            <div class="font-bold text-sm">Docker</div>
+                        </div>
+                        <div class="flex-1 bg-blue-50 border border-blue-100 p-4 rounded-xl text-center">
+                            <i class="fa-solid fa-dharmachakra text-3xl text-blue-700 mb-2"></i>
+                            <div class="font-bold text-sm">Kubernetes</div>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="https://www.coursera.org/specializations/cloud-computing" target="_blank" class="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-brand-gray hover:bg-gray-200 rounded-lg text-sm font-semibold transition-colors">
+                            <i class="fa-solid fa-cubes text-gray-500"></i> Coursera: K8s
+                        </a>
+                        <label class="flex-1 cursor-pointer flex items-center justify-center gap-2 px-4 py-3 border border-gray-200 hover:border-brand-blue rounded-lg text-sm font-medium transition-all group/btn">
+                            <i class="fa-solid fa-upload text-brand-blue group-hover/btn:scale-110 transition-transform"></i>
+                            <span class="truncate">Upload Certificate</span>
+                            <input type="file" class="hidden" onchange="this.previousElementSibling.textContent = this.files[0] ? this.files[0].name : 'Upload Certificate'; this.parentElement.classList.add('bg-blue-50', 'border-brand-blue');">
+                        </label>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- End Spacer -->
+            <div class="h-20"></div>
+
+        </div>
+    </main>
+
+</body>
+</html>

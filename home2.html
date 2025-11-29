@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Career Pathways</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb', // Primary Blue
+                            900: '#1e3a8a',
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
+                        'glow': '0 0 15px rgba(37, 99, 235, 0.1)',
+                        'hover': '0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Modern Gradient Mesh Background */
+        .mesh-bg {
+            background-color: #ffffff;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(253,16%,7%,0) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(225,39%,30%,0) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(339,49%,30%,0) 0, transparent 50%);
+        }
+        
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .bento-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Smooth reveal animation */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-reveal {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-600 font-body antialiased selection:bg-brand-600 selection:text-white">
+
+    <!-- Decorative Blobs -->
+    <div class="blob bg-blue-100 w-96 h-96 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="blob bg-purple-100 w-96 h-96 rounded-full bottom-0 right-0 translate-x-1/2 translate-y-1/2"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 bg-white/80 backdrop-blur-xl border-b border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white text-sm">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <span class="font-bold text-lg text-slate-900 tracking-tight font-sans">Career<span class="text-brand-600">Flow</span></span>
+                </div>
+                <div class="hidden md:flex gap-8 text-sm font-medium text-slate-500">
+                    <a href="#" class="hover:text-brand-600 transition-colors">Explore</a>
+                    <a href="#" class="hover:text-brand-600 transition-colors">Mentors</a>
+                    <a href="#" class="hover:text-brand-600 transition-colors">Enterprise</a>
+                </div>
+                <button class="px-4 py-2 bg-slate-900 text-white text-sm font-medium rounded-lg hover:bg-slate-800 transition-colors shadow-lg shadow-slate-900/10">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        
+        <!-- Hero Section -->
+        <div class="text-center max-w-3xl mx-auto mb-20 animate-reveal">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 shadow-sm text-slate-600 text-xs font-semibold mb-6">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                New Roadmaps for 2025
+            </div>
+            
+            <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6 font-sans">
+                Choose your <br class="hidden md:block" />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-purple-600">Engineering Path</span>
+            </h1>
+            
+            <p class="text-lg text-slate-500 leading-relaxed mb-8">
+                Interactive, step-by-step career guides tailored for the modern tech industry. Stop guessing and start building your future today.
+            </p>
+        </div>
+
+        <!-- Bento Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
+            
+            <!-- Full Stack Card (Large) -->
+            <a href="fullstack_roadmap.html" class="bento-card group relative overflow-hidden rounded-3xl bg-white border border-slate-200 p-8 flex flex-col justify-between md:col-span-2 lg:col-span-2 shadow-soft hover:border-brand-600/30 animate-reveal delay-100">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-orange-50 to-transparent rounded-bl-[100px] -z-0 opacity-50 group-hover:scale-110 transition-transform duration-500"></div>
+                
+                <div class="relative z-10">
+                    <div class="w-12 h-12 rounded-2xl bg-orange-100 flex items-center justify-center text-orange-600 text-xl mb-6">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2 font-sans">Full Stack Developer</h3>
+                    <p class="text-slate-500 max-w-md">Master the complete web stack. Build dynamic applications using React, Node.js, and modern databases.</p>
+                </div>
+                
+                <div class="relative z-10 flex items-center gap-4 mt-auto">
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center text-[10px] text-slate-500"><i class="fa-brands fa-react"></i></div>
+                        <div class="w-8 h-8 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center text-[10px] text-slate-500"><i class="fa-brands fa-node"></i></div>
+                        <div class="w-8 h-8 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center text-[10px] text-slate-500"><i class="fa-solid fa-database"></i></div>
+                    </div>
+                    <span class="text-sm font-semibold text-brand-600 group-hover:translate-x-1 transition-transform">Start Track <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                </div>
+            </a>
+
+            <!-- Cloud Card (Tall) -->
+            <a href="cloud_roadmap.html" class="bento-card group relative overflow-hidden rounded-3xl bg-slate-900 text-white p-8 flex flex-col justify-between shadow-xl animate-reveal delay-200">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent"></div>
+                <!-- Decorative grid lines -->
+                <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+                <div class="relative z-10">
+                    <div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white text-xl mb-6 border border-white/20">
+                        <i class="fa-solid fa-cloud"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 font-sans">Cloud Engineer</h3>
+                    <p class="text-slate-400 text-sm">Design scalable infrastructure with AWS & Kubernetes.</p>
+                </div>
+
+                <div class="relative z-10 mt-auto">
+                    <div class="w-full bg-white/10 rounded-full h-1.5 mb-4 overflow-hidden">
+                        <div class="w-3/4 bg-blue-500 h-full rounded-full animate-pulse"></div>
+                    </div>
+                    <span class="text-sm font-semibold text-white group-hover:translate-x-1 transition-transform inline-flex items-center">
+                        Launch Console <i class="fa-solid fa-terminal ml-2 text-xs"></i>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Data Science (Small) -->
+            <div class="bento-card group relative overflow-hidden rounded-3xl bg-white border border-slate-200 p-8 flex flex-col justify-center shadow-soft animate-reveal delay-300">
+                <div class="absolute top-3 right-3 px-2 py-1 bg-slate-100 rounded text-[10px] font-bold text-slate-400 tracking-wide">SOON</div>
+                <div class="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600 mb-4">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-1 font-sans">Data Science</h3>
+                <p class="text-sm text-slate-500 mb-4">AI, ML & Python Analytics.</p>
+                <div class="w-full h-24 bg-slate-50 rounded-lg border border-slate-100 relative overflow-hidden group-hover:border-purple-200 transition-colors">
+                    <!-- Fake chart -->
+                    <div class="absolute bottom-0 left-0 right-0 h-12 bg-purple-500/10 flex items-end justify-around px-2 pb-2">
+                        <div class="w-2 bg-purple-400 h-4 rounded-t"></div>
+                        <div class="w-2 bg-purple-400 h-8 rounded-t"></div>
+                        <div class="w-2 bg-purple-400 h-6 rounded-t"></div>
+                        <div class="w-2 bg-purple-400 h-10 rounded-t"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cyber Security (Small) -->
+            <div class="bento-card group relative overflow-hidden rounded-3xl bg-white border border-slate-200 p-8 flex flex-col justify-center shadow-soft md:col-span-2 lg:col-span-1 animate-reveal delay-300">
+                <div class="absolute top-3 right-3 px-2 py-1 bg-slate-100 rounded text-[10px] font-bold text-slate-400 tracking-wide">SOON</div>
+                <div class="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center text-red-600 mb-4">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 mb-1 font-sans">Cyber Security</h3>
+                <p class="text-sm text-slate-500">Ethical Hacking & Defense.</p>
+                
+                <div class="mt-4 flex items-center gap-2 text-xs font-mono text-slate-400 bg-slate-50 p-2 rounded border border-slate-100">
+                    <span class="text-green-500">➜</span>
+                    <span>_secure_network_access</span>
+                    <span class="animate-pulse">_</span>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Simple Footer -->
+    <footer class="border-t border-slate-200 bg-white py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex justify-center items-center gap-2 mb-4 text-slate-400">
+                <i class="fa-brands fa-github hover:text-slate-900 cursor-pointer transition-colors"></i>
+                <i class="fa-brands fa-twitter hover:text-blue-400 cursor-pointer transition-colors"></i>
+                <i class="fa-brands fa-discord hover:text-indigo-500 cursor-pointer transition-colors"></i>
+            </div>
+            <p class="text-slate-500 text-sm">
+                &copy; 2025 CareerFlow. Designed for Developers.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
