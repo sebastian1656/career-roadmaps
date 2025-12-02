@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Career Pathways</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#111827',
+                            gray: '#6b7280',
+                            light: '#f3f4f6',
+                            primary: '#2563eb',
+                        }
+                    },
+                    boxShadow: {
+                        'row': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
+                        'row-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .catalog-row {
+            transition: all 0.2s ease-in-out;
+        }
+        .catalog-row:hover {
+            transform: scale-[1.01];
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-white text-brand-black font-sans antialiased selection:bg-brand-black selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="border-b border-gray-100 bg-white sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-brand-black text-white rounded-lg flex items-center justify-center font-bold text-lg">E</div>
+                    <span class="font-bold text-lg tracking-tight">Elevate <span class="text-brand-primary">Your Future</span></span>
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div>
+               <h1 class="text-5xl md:text-7xl font-bold font-display tracking-tight mb-6 text-slate-900">
+                ACE Your 
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Career</span>
+            </h1>
+                <p class="text-lg text-brand-gray max-w-xl">
+                    Comprehensive, step-by-step curriculums designed to take you from beginner to industry-ready professional in your chosen domain.
+                </p>
+            </div>
+            <div class="flex items-center gap-2 text-sm font-medium bg-brand-light px-3 py-1.5 rounded-full text-brand-gray">
+                <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                Updated on 2025
+            </div>
+        </div>
+
+        <!-- Catalog List Container -->
+        <div class="flex flex-col gap-4">
+
+            <!-- Full Stack Row -->
+            <a href="test3.html" class="catalog-row group block bg-white border border-gray-200 rounded-xl p-6 shadow-row hover:shadow-row-hover hover:border-brand-primary/30 relative overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-orange-500 group-hover:w-2 transition-all"></div>
+                
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <!-- Icon -->
+                    <div class="flex-shrink-0 w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center text-2xl text-orange-600">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="flex-grow text-center md:text-left">
+                        <div class="flex items-center justify-center md:justify-start gap-3 mb-1">
+                            <h3 class="text-xl font-bold">Full Stack Developer</h3>
+                            
+                        </div>
+                        <p class="text-sm text-brand-gray">Master both frontend &amp; backend. Build complete web applications using React, Node.js, and modern databases.</p>
+                        
+                        <!-- Meta Tags Mobile -->
+                        <div class="mt-3 flex flex-wrap justify-center md:justify-start gap-2 md:hidden">
+                            <span class="text-xs bg-gray-50 px-2 py-1 rounded text-gray-500">24 Weeks</span>
+                            <span class="text-xs bg-gray-50 px-2 py-1 rounded text-gray-500">Beginner Friendly</span>
+                        </div>
+                    </div>
+
+                    <!-- Meta Info Desktop -->
+                    <div class="hidden md:flex items-center gap-8 text-sm text-brand-gray flex-shrink-0 border-l border-gray-100 pl-8">
+                        <div class="text-center">
+                            <div class="font-bold text-brand-black">7</div>
+                            <div class="text-xs uppercase tracking-wide">Roles</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-bold text-brand-black">6</div>
+                            <div class="text-xs uppercase tracking-wide">Certifications</div>
+                        </div>
+                      <div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-brand-black group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div> 
+                    </div>
+                </div>
+            </a>
+
+            <!-- Cloud Row -->
+            <a href="cloud_roadmap.html" class="catalog-row group block bg-white border border-gray-200 rounded-xl p-6 shadow-row hover:shadow-row-hover hover:border-brand-primary/30 relative overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 group-hover:w-2 transition-all"></div>
+                
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <!-- Icon -->
+                    <div class="flex-shrink-0 w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-2xl text-blue-600">
+                        <i class="fa-solid fa-cloud"></i>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="flex-grow text-center md:text-left">
+                        <div class="flex items-center justify-center md:justify-start gap-3 mb-1">
+                            <h3 class="text-xl font-bold">DevOps Engineer</h3>
+                            
+                        </div>
+                        <p class="text-sm text-brand-gray">Build a Full CI/CD Pipeline that uses Git, Jenkins/GitLab, Docker, Kubernetes, and Terraform to deploy a microservice.</p>
+                         
+                         <!-- Meta Tags Mobile -->
+                         <div class="mt-3 flex flex-wrap justify-center md:justify-start gap-2 md:hidden">
+                            <span class="text-xs bg-gray-50 px-2 py-1 rounded text-gray-500">8 Roles</span>
+                            <span class="text-xs bg-gray-50 px-2 py-1 rounded text-gray-500">Intermediate</span>
+                        </div>
+                    </div>
+
+                    <!-- Meta Info Desktop -->
+                    <div class="hidden md:flex items-center gap-8 text-sm text-brand-gray flex-shrink-0 border-l border-gray-100 pl-8">
+                        <div class="text-center">
+                            <div class="font-bold text-brand-black">8</div>
+                            <div class="text-xs uppercase tracking-wide">Roles</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-bold text-brand-black">5</div>
+                            <div class="text-xs uppercase tracking-wide">Certificates</div>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-brand-black group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+			
+			
+			<!-- Cloud Row -->
+            <a href="cloud_roadmap.html" class="catalog-row group block bg-white border border-gray-200 rounded-xl p-6 shadow-row hover:shadow-row-hover hover:border-brand-primary/30 relative overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-orange-500 group-hover:w-2 transition-all"></div>
+                
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <!-- Icon -->
+                    <div class="flex-shrink-0 w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-2xl text-blue-600">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="flex-grow text-center md:text-left">
+                        <div class="flex items-center justify-center md:justify-start gap-3 mb-1">
+                            <h3 class="text-xl font-bold">Site Reliability Engineer</h3>
+                            
+                        </div>
+                        <p class="text-sm text-brand-gray">Deploy a high-availability service, instrument it heavily, define SLOs, and write automation to perform self-healing for common failures.</p>
+                         
+                         <!-- Meta Tags Mobile -->
+                         <div class="mt-3 flex flex-wrap justify-center md:justify-start gap-2 md:hidden">
+                            <span class="text-xs bg-gray-50 px-2 py-1 rounded text-gray-500">6 Roles</span>
+                            <span class="text-xs bg-gray-50 px-2 py-1 rounded text-gray-500">Intermediate</span>
+                        </div>
+                    </div>
+
+                    <!-- Meta Info Desktop -->
+                    <div class="hidden md:flex items-center gap-8 text-sm text-brand-gray flex-shrink-0 border-l border-gray-100 pl-8">
+                        <div class="text-center">
+                            <div class="font-bold text-brand-black">6</div>
+                            <div class="text-xs uppercase tracking-wide">Roles</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-bold text-brand-black">8</div>
+                            <div class="text-xs uppercase tracking-wide">Certificates</div>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-brand-black group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+			
+			<!-- Cloud Row -->
+            <a href="cloud_roadmap.html" class="catalog-row group block bg-white border border-gray-200 rounded-xl p-6 shadow-row hover:shadow-row-hover hover:border-brand-primary/30 relative overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 group-hover:w-2 transition-all"></div>
+                
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <!-- Icon -->
+                    <div class="flex-shrink-0 w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-2xl text-blue-600">
+                        <i class="fa-solid fa-cloud"></i>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="flex-grow text-center md:text-left">
+                        <div class="flex items-center justify-center md:justify-start gap-3 mb-1">
+                            <h3 class="text-xl font-bold">Data Engineer</h3>
+                            
+                        </div>
+                        <p class="text-sm text-brand-gray">Complete a real-world project (Kaggle/Domain-specific) from data acquisition to statistical modeling and final professional presentation/report.</p>
+                         
+                         <!-- Meta Tags Mobile -->
+                         <div class="mt-3 flex flex-wrap justify-center md:justify-start gap-2 md:hidden">
+                            <span class="text-xs bg-gray-50 px-2 py-1 rounded text-gray-500">5 Roles</span>
+                            <span class="text-xs bg-gray-50 px-2 py-1 rounded text-gray-500">Intermediate</span>
+                        </div>
+                    </div>
+
+                    <!-- Meta Info Desktop -->
+                    <div class="hidden md:flex items-center gap-8 text-sm text-brand-gray flex-shrink-0 border-l border-gray-100 pl-8">
+                        <div class="text-center">
+                            <div class="font-bold text-brand-black">5</div>
+                            <div class="text-xs uppercase tracking-wide">Roles</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-bold text-brand-black">5</div>
+                            <div class="text-xs uppercase tracking-wide">Certificates</div>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-brand-black group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+			
+			<!-- Cloud Row -->
+            <a href="cloud_roadmap.html" class="catalog-row group block bg-white border border-gray-200 rounded-xl p-6 shadow-row hover:shadow-row-hover hover:border-brand-primary/30 relative overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-orange-500 group-hover:w-2 transition-all"></div>
+                
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <!-- Icon -->
+                    <div class="flex-shrink-0 w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-2xl text-blue-600">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="flex-grow text-center md:text-left">
+                        <div class="flex items-center justify-center md:justify-start gap-3 mb-1">
+                            <h3 class="text-xl font-bold">Big Data Engineer</h3>
+                            
+                        </div>
+                        <p class="text-sm text-brand-gray">Design and deploy a scalable, fault-tolerant Big Data pipeline that ingests streaming data, processes it with Spark, and loads it into a cloud data warehouse.</p>
+                         
+                         <!-- Meta Tags Mobile -->
+                         <div class="mt-3 flex flex-wrap justify-center md:justify-start gap-2 md:hidden">
+                            <span class="text-xs bg-gray-50 px-2 py-1 rounded text-gray-500">6 Roles</span>
+                            <span class="text-xs bg-gray-50 px-2 py-1 rounded text-gray-500">Intermediate</span>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Meta Info Desktop -->
+                    <div class="hidden md:flex items-center gap-8 text-sm text-brand-gray flex-shrink-0 border-l border-gray-100 pl-8">
+                        <div class="text-center">
+                            <div class="font-bold text-brand-black">6</div>
+                            <div class="text-xs uppercase tracking-wide">Roles</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-bold text-brand-black">8</div>
+                            <div class="text-xs uppercase tracking-wide">Certificates</div>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-brand-black group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            
+
+        </div>
+
+
+<!-- Cloud Row -->
+            <a href="cloud_roadmap.html" class="catalog-row group block bg-white border border-gray-200 rounded-xl p-6 shadow-row hover:shadow-row-hover hover:border-brand-primary/30 relative overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 group-hover:w-2 transition-all"></div>
+                
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <!-- Icon -->
+                    <div class="flex-shrink-0 w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-2xl text-blue-600">
+                        <i class="fa-solid fa-cloud"></i>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="flex-grow text-center md:text-left">
+                        <div class="flex items-center justify-center md:justify-start gap-3 mb-1">
+                            <h3 class="text-xl font-bold">Automation QA Engineer</h3>
+                            
+                        </div>
+                        <p class="text-sm text-brand-gray">Build an End-to-End E-commerce Test Automation Framework.</p>
+                         
+                         <!-- Meta Tags Mobile -->
+                         <div class="mt-3 flex flex-wrap justify-center md:justify-start gap-2 md:hidden">
+                            <span class="text-xs bg-gray-50 px-2 py-1 rounded text-gray-500">5 Roles</span>
+                            <span class="text-xs bg-gray-50 px-2 py-1 rounded text-gray-500">Intermediate</span>
+                        </div>
+                    </div>
+
+
+
+  <!-- Meta Info Desktop -->
+                    <div class="hidden md:flex items-center gap-8 text-sm text-brand-gray flex-shrink-0 border-l border-gray-100 pl-8">
+                        <div class="text-center">
+                            <div class="font-bold text-brand-black">6</div>
+                            <div class="text-xs uppercase tracking-wide">Roles</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-bold text-brand-black">8</div>
+                            <div class="text-xs uppercase tracking-wide">Certificates</div>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-brand-black group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            
+
+        </div>
+
+
+
+
+
+
+    </main>
+
+    <!-- Simple Footer -->
+    <footer class="border-t border-gray-100 py-12 bg-white">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <p class="text-sm text-gray-400">&copy; 2025 All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

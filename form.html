@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Course Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-blue-50 min-h-screen flex items-center justify-center p-4">
+
+    <!-- Main Container -->
+    <div class="max-w-md w-full bg-white rounded-2xl shadow-xl overflow-hidden animate-fade-in">
+        
+        <!-- Header -->
+        <div class="bg-blue-600 p-8 text-center">
+            <div class="mx-auto bg-blue-500 w-16 h-16 rounded-full flex items-center justify-center mb-4 shadow-lg">
+                <i class="fas fa-graduation-cap text-white text-2xl"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-white mb-1">Elevated Skillset</h2>
+            
+        </div>
+
+        <!-- Form Section -->
+        <div class="p-8">
+            <form id="registrationForm" class="space-y-6">
+                
+                <!-- Reg No -->
+                <div>
+                    <label for="regNo" class="block text-sm font-medium text-gray-700 mb-1">Registration Number</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-id-card text-gray-400"></i>
+                        </div>
+                        <input type="text" id="regNo" name="regNo" required
+                            class="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors sm:text-sm"
+                            placeholder="URK24CS1010" disabled>
+                    </div>
+                </div>
+
+                <!-- Name -->
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-user text-gray-400"></i>
+                        </div>
+                        <input type="text" id="name" name="name" required
+                            class="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors sm:text-sm"
+                            placeholder="John" disabled>
+                    </div>
+                </div>
+
+                <!-- Division Row -->
+                <div class="grid grid-cols-1 gap-6">
+                    <div>
+                        <label for="division" class="block text-sm font-medium text-gray-700 mb-1">Division</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-layer-group text-gray-400"></i>
+                            </div>
+                            <select id="division" name="division" required
+                                class="block w-full pl-10 pr-10 py-2.5 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm appearance-none bg-white">
+                                <option value="" disabled selected>Division of CSE</option>
+                                
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+                                <i class="fas fa-chevron-down text-xs mr-2"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Name -->
+                <div>
+                    <label for="courseName" class="block text-sm font-medium text-gray-700 mb-1">Skill Elevated</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-book text-gray-400"></i>
+                        </div>
+                        <input type="text" id="courseName" name="courseName" required
+                            class="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors sm:text-sm"
+                            placeholder="Microsoft Technology Associate (MTA)" disabled>
+                    </div>
+                </div>
+
+                <!-- Certificate Link -->
+                <div>
+                    <label for="certLink" class="block text-sm font-medium text-gray-700 mb-1">Achievement Credentials (Certificate/Batch)</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-link text-gray-400"></i>
+                        </div>
+                        <input type="url" id="certLink" name="certLink" required
+                            class="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors sm:text-sm"
+                            placeholder="https://drive.google.com/...">
+                    </div>
+                    <p class="mt-1 text-xs text-gray-500">Paste the URL to your hosted certificate / batch</p>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" 
+                    class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+                    Submit Details
+                </button>
+            </form>
+
+            <!-- Success Message (Hidden by default) -->
+            <div id="successMessage" class="hidden text-center py-8">
+                <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4 animate-bounce">
+                    <i class="fas fa-check text-green-600 text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-medium text-gray-900">Submission Successful!</h3>
+                <p class="text-sm text-gray-500 mt-2">We have recorded your details.</p>
+                <div class="mt-6 bg-gray-50 rounded-lg p-4 text-left border border-gray-100">
+                    <p class="text-xs text-gray-400 uppercase font-semibold mb-2">Summary</p>
+                    <div id="summaryContent" class="text-sm text-gray-700 space-y-1">
+                        <!-- Summary injected here -->
+                    </div>
+                </div>
+                <button onclick="resetForm()" class="mt-6 text-sm text-blue-600 hover:text-blue-800 font-medium hover:underline">
+                    Submit another response
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('registrationForm');
+        const successMessage = document.getElementById('successMessage');
+        const summaryContent = document.getElementById('summaryContent');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = {
+                regNo: document.getElementById('regNo').value,
+                name: document.getElementById('name').value,
+                division: document.getElementById('division').value,
+                courseName: document.getElementById('courseName').value,
+                certLink: document.getElementById('certLink').value
+            };
+
+            // Populate summary
+            summaryContent.innerHTML = `
+                <p><span class="font-medium">Reg No:</span> ${formData.regNo}</p>
+                <p><span class="font-medium">Name:</span> ${formData.name}</p>
+                <p><span class="font-medium">Division:</span> ${formData.division}</p>
+                <p><span class="font-medium">Course:</span> ${formData.courseName}</p>
+                <p><span class="font-medium truncate block">Link:</span> <a href="${formData.certLink}" target="_blank" class="text-blue-500 truncate">${formData.certLink}</a></p>
+            `;
+
+            // Simple animation to switch views
+            form.classList.add('hidden');
+            successMessage.classList.remove('hidden');
+            successMessage.classList.add('animate-fade-in');
+        });
+
+        function resetForm() {
+            form.reset();
+            successMessage.classList.add('hidden');
+            form.classList.remove('hidden');
+            form.classList.add('animate-fade-in');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Learning Dashboard</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        
+        /* Smooth transition for the progress bars */
+        .progress-bar-fill {
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Custom scrollbar for the course list if needed */
+        .custom-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #d1d5db; 
+            border-radius: 10px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af; 
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col items-center py-10 px-4">
+
+    <!-- Dashboard Container -->
+    <div class="w-full max-w-4xl bg-white rounded-2xl shadow-xl overflow-hidden">
+        
+        <!-- Header Section -->
+        <div class="bg-indigo-600 p-8 text-white flex justify-between items-center">
+            <div>
+                <h1 class="text-3xl font-bold">ACE Your Career</h1>
+                <p class="text-indigo-200 mt-1">Keep up the great work!</p>
+            </div>
+            <div class="hidden sm:block">
+                <div class="h-16 w-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <i data-lucide="trophy" class="h-8 w-8 text-yellow-300"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls / Actions -->
+        <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+            <div class="flex items-center gap-2">
+                <i data-lucide="bar-chart-2" class="text-gray-500 h-5 w-5"></i>
+                <span class="font-medium text-gray-600">Overall Progress</span>
+            </div>
+            <button onclick="randomizeProgress()" class="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm font-medium hover:bg-gray-50 hover:text-indigo-600 transition-colors shadow-sm">
+                <i data-lucide="refresh-cw" class="h-4 w-4"></i>
+                Update Progress
+            </button>
+        </div>
+
+        <!-- Courses Grid -->
+        <div class="p-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="courses-container">
+                <!-- Courses will be injected here via JavaScript -->
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="bg-gray-50 p-4 text-center text-sm text-gray-500 border-t border-gray-100">
+            &copy; 2025 
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Course Data - Added 'link' property to each object
+        const courses = [
+            { 
+                id: 1, 
+                title: "Full Stack Developer", 
+                instructor: "Microsof/Google/Meta/MongoDB/Oracle/AWS", 
+                progress: 75, 
+                color: "bg-sky-500",
+                icon: "cloud",
+                link: "test3.html" // Example Link
+            },
+            { 
+                id: 2, 
+                title: "DevOps Engineer", 
+                instructor: "CI/CD Pipeline", 
+                progress: 60, 
+                color: "bg-indigo-500",
+                icon: "git-merge",
+                link: "test3.html" // Placeholder Link
+            },
+            { 
+                id: 3, 
+                title: "Site Reliability Engineer", 
+                instructor: "System Ops", 
+                progress: 45, 
+                color: "bg-rose-500",
+                icon: "activity",
+                link: "test3.html"
+            },
+            { 
+                id: 4, 
+                title: "Data Engineer", 
+                instructor: "ETL & Warehousing", 
+                progress: 88, 
+                color: "bg-emerald-500",
+                icon: "database",
+                link: "test3.html"
+            },
+            { 
+                id: 5, 
+                title: "Big Data Engineer", 
+                instructor: "Hadoop & Spark", 
+                progress: 30, 
+                color: "bg-cyan-600",
+                icon: "server",
+                link: "test3.html"
+            },
+            { 
+                id: 6, 
+                title: "Automation QA Engineer", 
+                instructor: "Testing Frameworks", 
+                progress: 15, 
+                color: "bg-purple-500",
+                icon: "check-square",
+                link: "test3.html"
+            }
+        ];
+
+        // Function to render courses
+        function renderCourses() {
+            const container = document.getElementById('courses-container');
+            container.innerHTML = '';
+
+            courses.forEach(course => {
+                // Determine text color based on progress for the label
+                let statusText = "In Progress";
+                if(course.progress === 100) statusText = "Completed";
+                if(course.progress < 15) statusText = "Just Started";
+
+                // CHANGED: Outer wrapper is now an <a> tag instead of a <div>
+                // Added hover classes: hover:bg-gray-50, hover:shadow-md, border styles
+                const courseHTML = `
+                    <a href="${course.link}" target="_blank" class="flex flex-col gap-3 group p-4 rounded-xl border border-transparent hover:border-gray-200 hover:bg-gray-50 hover:shadow-md transition-all duration-200">
+                        <!-- Header: Icon + Title -->
+                        <div class="flex justify-between items-start">
+                            <div class="flex gap-3">
+                                <div class="p-2 rounded-lg bg-gray-100 text-gray-600 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+                                    <i data-lucide="${course.icon}" class="h-6 w-6"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-800 group-hover:text-indigo-600 transition-colors">${course.title}</h3>
+                                    <p class="text-xs text-gray-500">${course.instructor}</p>
+                                </div>
+                            </div>
+                            <span class="text-sm font-bold text-gray-700" id="percent-${course.id}">0%</span>
+                        </div>
+
+                        <!-- Progress Bar Container -->
+                        <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden mt-2">
+                            <div id="bar-${course.id}" 
+                                 class="progress-bar-fill h-full rounded-full ${course.color} shadow-sm" 
+                                 style="width: 0%">
+                            </div>
+                        </div>
+                        
+                        <!-- Footer status -->
+                        <div class="flex justify-between text-xs text-gray-400 mt-1">
+                            <span>${statusText}</span>
+                            <div class="flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                <span>Go to Course</span>
+                                <i data-lucide="arrow-right" class="h-3 w-3"></i>
+                            </div>
+                        </div>
+                    </a>
+                `;
+                container.innerHTML += courseHTML;
+            });
+            
+            // Re-initialize icons for new elements
+            lucide.createIcons();
+
+            // Trigger animation after a slight delay to allow DOM to paint
+            setTimeout(() => {
+                updateBars();
+            }, 100);
+        }
+
+        // Function to update the width of bars based on data
+        function updateBars() {
+            courses.forEach(course => {
+                const bar = document.getElementById(`bar-${course.id}`);
+                const label = document.getElementById(`percent-${course.id}`);
+                
+                if (bar && label) {
+                    bar.style.width = `${course.progress}%`;
+                    
+                    // Simple counter animation for text
+                    animateValue(label, 0, course.progress, 1500);
+                }
+            });
+        }
+
+        // Helper to animate numbers
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start) + "%";
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Function for the "Update Progress" button to simulate changes
+        function randomizeProgress() {
+            courses.forEach(c => {
+                // Randomize between 10 and 100
+                c.progress = Math.floor(Math.random() * 90) + 10;
+            });
+            updateBars();
+        }
+
+        // Initial Render
+        renderCourses();
+
+    </script>
+</body>
+</html>

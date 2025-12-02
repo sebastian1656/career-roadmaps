@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Career Pathways</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#2563eb', // Blue
+                            secondary: '#4f46e5', // Indigo
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .domain-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .domain-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+        }
+        .icon-box {
+            transition: transform 0.3s ease;
+        }
+        .domain-card:hover .icon-box {
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-600 font-sans antialiased selection:bg-brand-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-brand-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
+                        <i class="fa-solid fa-layer-group text-xl"></i>
+                    </div>
+                    <span class="font-bold text-2xl text-slate-900 tracking-tight">Elevate Your <span class="text-brand-primary">Future</span></span>
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-20 pb-32 overflow-hidden bg-white">
+        <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <h1 class="text-5xl md:text-7xl font-bold text-slate-900 tracking-tight mb-8">
+                ACE Your 
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">Career</span>
+            </h1>
+            <p class="text-xl text-slate-500 max-w-2xl mx-auto mb-12 leading-relaxed">
+                Comprehensive, step-by-step curriculums designed to take you from beginner to industry-ready professional in your chosen domain.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#domains" class="px-8 py-4 bg-brand-primary text-white font-semibold rounded-xl hover:bg-blue-600 transition-all shadow-xl shadow-blue-500/20 flex items-center justify-center gap-2">
+                    Explore Domains <i class="fa-solid fa-arrow-down animate-bounce"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Domains Grid -->
+    <section id="domains" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Full Stack Card -->
+                <a href="test3.html" class="domain-card group bg-white rounded-2xl p-8 border border-slate-200 relative overflow-hidden block">
+                    <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-code text-9xl text-slate-900"></i>
+                    </div>
+                    
+                    <div class="icon-box w-14 h-14 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center text-2xl mb-6 shadow-sm border border-orange-100">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors">Full Stack Dev</h3>
+                    <p class="text-slate-500 mb-6 leading-relaxed">
+                        Master both frontend & backend. Build complete web applications using React, Node.js, and modern databases.
+                    </p>
+                    
+                    <div class="flex items-center text-sm font-semibold text-orange-600 group-hover:translate-x-2 transition-transform">
+                        View Roadmap <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </div>
+                    
+                    <div class="mt-8 pt-6 border-t border-slate-100 flex gap-2">
+                        <span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-500 font-medium">React</span>
+                        <span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-500 font-medium">Node</span>
+                        <span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-500 font-medium">SQL</span>
+                    </div>
+                </a>
+
+                <!-- Cloud Engineer Card -->
+                <a href="cloud_roadmap.html" class="domain-card group bg-white rounded-2xl p-8 border border-slate-200 relative overflow-hidden block">
+                    <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-cloud text-9xl text-slate-900"></i>
+                    </div>
+                    
+                    <div class="icon-box w-14 h-14 rounded-2xl bg-sky-50 text-sky-600 flex items-center justify-center text-2xl mb-6 shadow-sm border border-sky-100">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-sky-600 transition-colors">DevOps Engineer</h3>
+                    <p class="text-slate-500 mb-6 leading-relaxed">
+                        Build a Full CI/CD Pipeline that uses Git, Jenkins/GitLab, Docker, Kubernetes, and Terraform to deploy a microservice.
+                    </p>
+                    
+                    <div class="flex items-center text-sm font-semibold text-sky-600 group-hover:translate-x-2 transition-transform">
+                        View Roadmap <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-slate-100 flex gap-2">
+                        <span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-500 font-medium">Cloud Basics & Scripting</span>
+                        <span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-500 font-medium">Containerization</span>
+                        <span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-500 font-medium">Orchestration</span>
+                    </div>
+                </a>
+
+                <!-- Data Science Card (Placeholder) -->
+                <div class="domain-card group bg-white rounded-2xl p-8 border border-slate-200 relative overflow-hidden opacity-75 hover:opacity-100 cursor-not-allowed">
+                    
+                    
+                    <div class="icon-box w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center text-2xl mb-6 shadow-sm border border-purple-100">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Site Reliability Engineer</h3>
+                    <p class="text-slate-500 mb-6 leading-relaxed">
+                        Deploy a high-availability service, instrument it heavily, define SLOs, and write automation to perform self-healing for common failures.
+                    </p>
+                    
+                    <div class="flex items-center text-sm font-semibold text-orange-600 group-hover:translate-x-2 transition-transform">
+                        View Roadmap <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-slate-100 flex gap-2">
+                        <span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-500 font-medium">SRE Principles</span>
+                        <span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-500 font-medium">Observability</span>
+			 <span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-500 font-medium">Automation & CI/CD</span>
+                    </div>
+                </div>
+
+                <!-- Cyber Security Card (Placeholder) -->
+                <div class="domain-card group bg-white rounded-2xl p-8 border border-slate-200 relative overflow-hidden opacity-75 hover:opacity-100 cursor-not-allowed">
+                    
+                    
+                    <div class="icon-box w-14 h-14 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center text-2xl mb-6 shadow-sm border border-red-100">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Data Engineer</h3>
+                    <p class="text-slate-500 mb-6 leading-relaxed">
+                        Complete a real-world project (Kaggle/Domain-specific) from data acquisition to statistical modeling and final professional presentation/report.
+                    </p>
+                    
+                     <div class="flex items-center text-sm font-semibold text-sky-600 group-hover:translate-x-2 transition-transform">
+                        View Roadmap <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-slate-100 flex gap-2">
+                        <span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-500 font-medium">Model Building</span>
+                        <span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-500 font-medium">Advanced Statistics</span>
+			<span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-500 font-medium">Advanced ML</span>
+                        <span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-500 font-medium">A/B Testing & Ethics</span>
+                    </div>
+                </div>
+				
+				 <a href="fullstack_roadmap.html" class="domain-card group bg-white rounded-2xl p-8 border border-slate-200 relative overflow-hidden block">
+                    <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-code text-9xl text-slate-900"></i>
+                    </div>
+                    
+                    <div class="icon-box w-14 h-14 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center text-2xl mb-6 shadow-sm border border-orange-100">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors">Big Data Engineer</h3>
+                    <p class="text-slate-500 mb-6 leading-relaxed">
+                        Design and deploy a scalable, fault-tolerant Big Data pipeline that ingests streaming data, processes it with Spark, and loads it into a cloud data warehouse.
+                    </p>
+                    
+                    <div class="flex items-center text-sm font-semibold text-orange-600 group-hover:translate-x-2 transition-transform">
+                        View Roadmap <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </div>
+                    
+                    <div class="mt-8 pt-6 border-t border-slate-100 flex gap-2">
+                        <span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-500 font-medium">Data Pipelines</span>
+                        <span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-500 font-medium">Distributed Processing</span>
+                        <span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-500 font-medium">Real-time Streaming</span>
+			<span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-500 font-medium">Cloud Data Services</span>
+                    </div>
+                </a>
+				
+				 <div class="domain-card group bg-white rounded-2xl p-8 border border-slate-200 relative overflow-hidden opacity-75 hover:opacity-100 cursor-not-allowed">
+                    
+                    
+                    <div class="icon-box w-14 h-14 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center text-2xl mb-6 shadow-sm border border-red-100">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Automation QA Engineer</h3>
+                    <p class="text-slate-500 mb-6 leading-relaxed">
+                       Build an End-to-End E-commerce Test Automation Framework.
+                    </p>
+                    
+                     <div class="flex items-center text-sm font-semibold text-sky-600 group-hover:translate-x-2 transition-transform">
+                        View Roadmap <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-slate-100 flex gap-2">
+                        <span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-500 font-medium">Automation</span>
+                        <span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-500 font-medium">API & Performance</span>
+			<span class="px-2 py-1 bg-slate-100 rounded text-xs text-slate-500 font-medium">Framework Design & Cloud</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-500 text-sm">
+                &copy; 2025 CS Pathways. Helping you find your way in tech.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
